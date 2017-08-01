@@ -1,0 +1,2 @@
+-- datos obligatorios sollo los que tengo en zapateriajuarez
+SELECT model,(SELECT description FROM `product_description` where prd.`product_id`=product_id) as descripcion,(SELECT price FROM `ms_provider_stock` where prd.`model`=skuProvider) as precio_costo,price as precio_mercadosale,(SELECT currency FROM `ms_provider_stock` where prd.`model`=skuProvider) as currency FROM `product` as prd order by price asc
